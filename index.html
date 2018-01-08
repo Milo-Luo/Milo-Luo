@@ -151,6 +151,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-my-last-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/08/my-last-blog/">my-last-blog</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/08/my-last-blog/" class="archive-article-date">
+  	<time datetime="2018-01-08T00:55:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>使用github pages服务搭建博客的好处有：</p>
+<ol>
+<li>全是静态文件，访问速度快；</li>
+</ol>
+        
+          <a class="article-more-a" href="/2018/01/08/my-last-blog/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/08/my-last-blog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -171,12 +239,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客的好处有：</p>
-<ol>
-<li>全是静态文件，访问速度快；</li>
-<li>免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；</li>
-<li>可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；</li>
-</ol>
+        <h1 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h1><p>1、创建仓库<br>在GitHub上创建一个“username.github.io”为名的仓库，便于博客访问：<a href="http://username.github.io。" target="_blank" rel="noopener">http://username.github.io。</a></p>
+<p>注意：<br>每一个github账户最多只能创建一个username.github.io这样可以直接使用域名访问的仓库。</p>
+<p>2、配置SSH Key<br>目的：<br>方便提交代码到GitHub，使用ssh key来解决本地和服务的连接问题，既可以避免每次都用用户名密码，又可以避免直接使用用户名密码的安全问题。</p>
+<p>为啥不安全？<br><a href="http://chensd.com/2016-08/Safe-username-password-Login-System.html" target="_blank" rel="noopener">http://chensd.com/2016-08/Safe-username-password-Login-System.html</a></p>
+<p>配置命令：<br>cd ~/.ssh      //检查本机已经存在的ssh密钥</p>
+<p>(1).如果：No such file or directory 说明你是第一次使用git。<br>执行：<br>ssh-keygen -t rsa -C “邮件地址”<br>结果：<br>➜  .ssh git:(master) ✗ ssh-keygen -t rsa -C “915834657@qq.com”<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/Users/luozhichao/.ssh/id_rsa):<br>Enter passphrase (empty for no passphrase):<br>Enter same passphrase again:<br>Your identification has been saved in /Users/luozhichao/.ssh/id_rsa.<br>Your public key has been saved in /Users/luozhichao/.ssh/id_rsa.pub.<br>The key fingerprint is:<br>SHA256:fIPjzRCjruFmkGxcrwZ7YZqOhSucqTbMZVmcrqisGb4 “915834657@qq.com”<br>The key’s randomart image is:<br>+—[RSA 2048]—-+<br>|                 |<br>|                 |<br>|    . . o        |<br>|    .+ o +       |<br>| o o+.. S o      |<br>| .B+oo.. <em> .     |<br>|</em>.BBoo. . o      |<br>|+/+o*o           |<br>|&amp;E+=o            |<br>+—-[SHA256]—–+</p>
+<p>执行ssh-keygen -t rsa -C “915834657@qq.com”然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容<br>结果：<br>➜  .ssh git:(master) ✗ ls<br>config         id_rsa         id_rsa.pub     id_rsa_github  id_rsa_gittest known_hosts<br>文本编辑打开后：<br>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8IWoTEvaGWJzxiU9Hl50fhgmk/LBegkP0//8sMBJlP+Q8QuE5F6WNwyBgjANNSEBI8MHSruCtRe5WPgitJEykShBx/TmiawBxFGUWrxZPCm/daUf+uHIuwyewsdKbCLsDTM7oC16O4+1D3oGXjcMwgAJx4CPj4onQFwATY15WOQZ0Wi1NkucOjD0Q7Dwi8gxZlGCyzPVQoc+wF9dxfe7JVP0i+3f39o+RT7YHcFWiKjHwknPSA4b6uTk9vBBzaqxipker9eGKC9Lwh10bDKr8HZLlBqfdvlhGO6mhoxMD4ijFlcAgD6wcP1H+Kih0wZPERmYCtTv5II/uP/B2wGgB “915834657@qq.com”</p>
+<p>(2).如果：.ssh git:(master) ✗ 说明你不是第一次使用git。<br>打开finder前往.ssh文件夹</p>
+<p>编辑config文件</p>
+<h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><p>Host github.com<br>HostName github.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/id_rsa_github</p>
+<h1 id="github—hexo"><a href="#github—hexo" class="headerlink" title="github—hexo"></a>github—hexo</h1><p>Host github.com<br>HostName github.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/id_rsa_github_hexo</p>
+<h1 id="git-test-com"><a href="#git-test-com" class="headerlink" title="git.test.com"></a>git.test.com</h1><p>Host git.test.com<br>User luozhichao160902@credithc.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/id_rsa_gittest</p>
         
           <a class="article-more-a" href="/2018/01/08/my-first-blog/#more">more >></a>
         

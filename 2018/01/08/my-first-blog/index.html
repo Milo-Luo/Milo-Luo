@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>my-first-blog | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言使用github pages服务搭建博客的好处有：  全是静态文件，访问速度快； 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台； 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；">
+  <meta name="description" content="创建博客1、创建仓库在GitHub上创建一个“username.github.io”为名的仓库，便于博客访问：http://username.github.io。 注意：每一个github账户最多只能创建一个username.github.io这样可以直接使用域名访问的仓库。 2、配置SSH Key目的：方便提交代码到GitHub，使用ssh key来解决本地和服务的连接问题，既可以避免每次都用用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="my-first-blog">
 <meta property="og:url" content="http://yoursite.com/2018/01/08/my-first-blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言使用github pages服务搭建博客的好处有：  全是静态文件，访问速度快； 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台； 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；">
-<meta property="og:updated_time" content="2018-01-08T00:53:03.661Z">
+<meta property="og:description" content="创建博客1、创建仓库在GitHub上创建一个“username.github.io”为名的仓库，便于博客访问：http://username.github.io。 注意：每一个github账户最多只能创建一个username.github.io这样可以直接使用域名访问的仓库。 2、配置SSH Key目的：方便提交代码到GitHub，使用ssh key来解决本地和服务的连接问题，既可以避免每次都用用">
+<meta property="og:updated_time" content="2018-01-08T01:11:39.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my-first-blog">
-<meta name="twitter:description" content="前言使用github pages服务搭建博客的好处有：  全是静态文件，访问速度快； 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台； 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；">
+<meta name="twitter:description" content="创建博客1、创建仓库在GitHub上创建一个“username.github.io”为名的仓库，便于博客访问：http://username.github.io。 注意：每一个github账户最多只能创建一个username.github.io这样可以直接使用域名访问的仓库。 2、配置SSH Key目的：方便提交代码到GitHub，使用ssh key来解决本地和服务的连接问题，既可以避免每次都用用">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -173,18 +173,52 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客的好处有：</p>
+        <h1 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h1><p>1、创建仓库<br>在GitHub上创建一个“username.github.io”为名的仓库，便于博客访问：<a href="http://username.github.io。" target="_blank" rel="noopener">http://username.github.io。</a></p>
+<p>注意：<br>每一个github账户最多只能创建一个username.github.io这样可以直接使用域名访问的仓库。</p>
+<p>2、配置SSH Key<br>目的：<br>方便提交代码到GitHub，使用ssh key来解决本地和服务的连接问题，既可以避免每次都用用户名密码，又可以避免直接使用用户名密码的安全问题。</p>
+<p>为啥不安全？<br><a href="http://chensd.com/2016-08/Safe-username-password-Login-System.html" target="_blank" rel="noopener">http://chensd.com/2016-08/Safe-username-password-Login-System.html</a></p>
+<p>配置命令：<br>cd ~/.ssh      //检查本机已经存在的ssh密钥</p>
+<p>(1).如果：No such file or directory 说明你是第一次使用git。<br>执行：<br>ssh-keygen -t rsa -C “邮件地址”<br>结果：<br>➜  .ssh git:(master) ✗ ssh-keygen -t rsa -C “915834657@qq.com”<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/Users/luozhichao/.ssh/id_rsa):<br>Enter passphrase (empty for no passphrase):<br>Enter same passphrase again:<br>Your identification has been saved in /Users/luozhichao/.ssh/id_rsa.<br>Your public key has been saved in /Users/luozhichao/.ssh/id_rsa.pub.<br>The key fingerprint is:<br>SHA256:fIPjzRCjruFmkGxcrwZ7YZqOhSucqTbMZVmcrqisGb4 “915834657@qq.com”<br>The key’s randomart image is:<br>+—[RSA 2048]—-+<br>|                 |<br>|                 |<br>|    . . o        |<br>|    .+ o +       |<br>| o o+.. S o      |<br>| .B+oo.. <em> .     |<br>|</em>.BBoo. . o      |<br>|+/+o*o           |<br>|&amp;E+=o            |<br>+—-[SHA256]—–+</p>
+<p>执行ssh-keygen -t rsa -C “915834657@qq.com”然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容<br>结果：<br>➜  .ssh git:(master) ✗ ls<br>config         id_rsa         id_rsa.pub     id_rsa_github  id_rsa_gittest known_hosts<br>文本编辑打开后：<br>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8IWoTEvaGWJzxiU9Hl50fhgmk/LBegkP0//8sMBJlP+Q8QuE5F6WNwyBgjANNSEBI8MHSruCtRe5WPgitJEykShBx/TmiawBxFGUWrxZPCm/daUf+uHIuwyewsdKbCLsDTM7oC16O4+1D3oGXjcMwgAJx4CPj4onQFwATY15WOQZ0Wi1NkucOjD0Q7Dwi8gxZlGCyzPVQoc+wF9dxfe7JVP0i+3f39o+RT7YHcFWiKjHwknPSA4b6uTk9vBBzaqxipker9eGKC9Lwh10bDKr8HZLlBqfdvlhGO6mhoxMD4ijFlcAgD6wcP1H+Kih0wZPERmYCtTv5II/uP/B2wGgB “915834657@qq.com”</p>
+<p>(2).如果：.ssh git:(master) ✗ 说明你不是第一次使用git。<br>打开finder前往.ssh文件夹</p>
+<p>编辑config文件</p>
+<h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><p>Host github.com<br>HostName github.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/id_rsa_github</p>
+<h1 id="github—hexo"><a href="#github—hexo" class="headerlink" title="github—hexo"></a>github—hexo</h1><p>Host github.com<br>HostName github.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/id_rsa_github_hexo</p>
+<h1 id="git-test-com"><a href="#git-test-com" class="headerlink" title="git.test.com"></a>git.test.com</h1><p>Host git.test.com<br>User luozhichao160902@credithc.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/id_rsa_gittest</p>
+<a id="more"></a>
+<p>3、测试是否成功<br>执行命令：$ ssh -T git@github.com<br>注意不需要修改命令</p>
+<p>此时你还需要配置：<br>$ git config –global user.name “xxx”// 你的github用户名<br>$ git config –global user.email  “xxx@qq.com”// 填写你的github注册邮箱</p>
+<p>命令的含义：<br><a href="http://blog.csdn.net/wirelessqa/article/details/8572928" target="_blank" rel="noopener">http://blog.csdn.net/wirelessqa/article/details/8572928</a></p>
+<p>4、使用Hexo写博客<br>Hexo是什么？<br>Hexo是一个基于 Github Pages 的博客发布工具，支持Markdown格式，有众多优秀插件和主题。<br>官网： <a href="http://hexo.io" target="_blank" rel="noopener">http://hexo.io</a><br>github: <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">https://github.com/hexojs/hexo</a></p>
+<p>Hexo原理<br>由于github pages存放的都是静态文件，博客存放的不只是文章内容，还有文章列表、分类、标签、翻页等动态内容，假如每次写完一篇文章都要手动更新博文目录和相关链接信息，相信谁都会疯掉，所以hexo所做的就是将这些md文件都放在本地，每次写完文章后调用写好的命令来批量完成相关页面的生成，然后再将有改动的页面提交到github。</p>
+<p>Hexo安装</p>
+<p>执行npm -v，查看是否已安装node.js<br>为安装,brew install node<br>已安装，nom install -g hexo</p>
+<p>Hexo初始化<br>在电脑的某个地方新建文件夹，比如我的是/Users/luozhichao/Desktop/Hexo，由于这个文件夹将用来存放代码。<br>执行：<br>cd /Users/luozhichao/Desktop/Hexo<br>hexo init<br>hexo会自动下载一些文件到这个目录，包括node_modules，目录结构如下图：</p>
+<p>//生成<br>hexo -g<br>//启动服务<br>hexo -s<br>hexo -s是开启本地预览服务，打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可看到内容，很多人会碰到浏览器一直在转圈但是就是加载不出来的问题，一般情况下是因为端口占用的缘故，因为4000这个端口太常见了，解决端口冲突问题请参考这篇文章：<br><a href="http://blog.liuxianan.com/windows-port-bind.html" target="_blank" rel="noopener">http://blog.liuxianan.com/windows-port-bind.html</a><br>第一次初始化的时候hexo已经帮我们写了一篇名为 Hello World 的文章和默认的主题</p>
+<p>修改主题<br>先选一个主题官方主题。<br>然后下载：<br>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia<br>下载后的主题都在这里</p>
+<p>修改_config.yml中的theme: landscape改为theme: yilia，然后重新执行hexo g来重新生成。<br>如果出现一些莫名其妙的问题，可以先执行hexo clean来清理一下public的内容，然后再来重新生成和发布。</p>
+<p>上传代码到github<br>首先，ssh key肯定要配置好。<br>其次，配置_config.yml中有关deploy的部分：<br>deploy:<br>type: git<br>repository: git@github.com:xxx/xxx.github.io.git<br>branch: master<br>然后，还需要安装一个插件：<br>npm install hexo-deployer-git –save<br>最后，输入hexo d就会将本次有改动的代码全部提交.访问一下<a href="https://github.com/Milo-Luo/Milo-Luo.github.io试试！" target="_blank" rel="noopener">https://github.com/Milo-Luo/Milo-Luo.github.io试试！</a></p>
+<p>hexo常用命令<br>常见命令<br>hexo new “postName” #新建文章<br>hexo new page “pageName” #新建页面<br>hexo generate #生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #部署到GitHub<br>hexo help  # 查看帮助<br>hexo version  #查看Hexo的版本<br>缩写：<br>hexo n == hexo new<br>hexo g == hexo generate<br>hexo s == hexo server<br>hexo d == hexo deploy<br>组合命令：<br>hexo s -g #生成并本地预览<br>hexo d -g #生成并上传</p>
+<p>写博客<br>定位到我们的hexo根目录，执行命令：<br>hexo new ‘my-first-blog’<br>hexo会帮我们在_posts下生成相关md文件：<br>➜  Hexo git:(master) ✗ hexo new ‘my-first-blog’<br>INFO  Created: ~/Desktop/Hexo/source/_posts/my-first-blog.md</p>
+<h2 id="我们只需要打开这个文件就可以开始写博客了，默认生成如下内容："><a href="#我们只需要打开这个文件就可以开始写博客了，默认生成如下内容：" class="headerlink" title="我们只需要打开这个文件就可以开始写博客了，默认生成如下内容："></a>我们只需要打开这个文件就可以开始写博客了，默认生成如下内容：</h2><p>title: my-first-blog<br>date: 2018-01-08 08:39:15</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>当然你也可以直接自己新建md文件，用这个命令的好处是帮我们自动生成了时间。</p>
+<h2 id="一般完整格式如下："><a href="#一般完整格式如下：" class="headerlink" title="一般完整格式如下："></a>一般完整格式如下：</h2><p>title: postName #文章页面上的显示名称，一般是中文<br>date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改<br>categories: 默认分类 #分类<br>tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格</p>
+<h2 id="description-附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面"><a href="#description-附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面" class="headerlink" title="description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面"></a>description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</h2><p>以下是正文<br>那么hexo new page ‘postName’命令和hexo new ‘postName’有什么区别呢？<br>hexo new page “my-second-blog”<br>生成如下：<br>➜  Hexo git:(master) ✗ hexo new page “my-second-blog”<br>INFO  Created: ~/Desktop/Hexo/source/my-second-blog/index.md<br>最终部署时生成：hexo\public\my-second-blog\index.html，但是它不会作为文章出现在博文目录。</p>
+<p>如何让博文列表不显示全部内容</p>
+<p>默认情况下，生成的博文目录会显示全部的文章内容，如何设置文章摘要的长度呢？<br>答案是在合适的位置加上<!--more-->即可，例如：</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客的好处有：</p>
 <ol>
 <li>全是静态文件，访问速度快；</li>
 <li>免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；</li>
 <li>可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；</li>
 </ol>
-<a id="more"></a>
+<!--more-->
 <ol>
 <li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；</li>
 <li>博客内容可以轻松打包、转移、发布到其它平台；</li>
 <li>等等；</li>
 </ol>
+<p>Markdown语法：<a href="https://www.appinn.com/markdown/" target="_blank" rel="noopener">https://www.appinn.com/markdown/</a><br>参考的博客：<a href="http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa" target="_blank" rel="noopener">http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa</a></p>
 
       
 
@@ -276,6 +310,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2018/01/08/my-last-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          my-last-blog
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
